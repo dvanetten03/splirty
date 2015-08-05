@@ -20,13 +20,14 @@
       		</div>
       		<% end %>
    		 </div>
-		<div class="col-xs-4 slogan">
+		<div class="col-xs-4 hidden-xs slogan">
 			Splirting out unsolicited advice about Malinois since 2003
 		</div>
-		<div class="col-xs-5 links">
+		<div class="col-xs-8 col-xs-offset-1 col-sm-offset-0 col-sm-5 links">
 			<!-- Button trigger modal -->
   		<%= link_to 'Contribute', '#', :data => {:toggle => 'modal', :target => '#myModal'} %>
 			<%= link_to 'About', about_path %>
+			&nbsp;&nbsp;
 		</div>
 	</header>
 
@@ -42,8 +43,9 @@
         </div>
           <%= simple_form_for Quote.new do |f| %>
           <div class="modal-body">
-			<%= f.input :saying %>
-			<%= f.input :author %>
+			<%= f.input :saying, :label => "What is the saying you want to add?", :placeholder => "When an 85 pound mammal licks your tears away, then tries to sit on your lap, it's hard to feel sad." %>
+			<br />
+			<%= f.input :author, :label => "Who is the author of the quote?", :placeholder => "Kristan Higgins" %>
 			</div>
           <div class="modal-footer">
           	<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -67,10 +69,10 @@
 
 <div class="footer">
 	<div class="container">
-		<div class="col-xs-6">
+		<div class="col-xs-12 col-sm-6">
         <%= link_to "This isn't enough, I need more", root_path, :class => 'next-quote' %>
       </div>
-      <div class="col-xs-6 footer-blurb">
+      <div class="col-xs-12 col-sm-6 footer-blurb">
         Proudly hacked in Oklahoma City, OK by <p>Diane</p><br />
         Want to learn more about Malinois? - <a href="http://www.akc.org/dog-breeds/belgian-malinois/">Learn about them here</a>
       </div>
